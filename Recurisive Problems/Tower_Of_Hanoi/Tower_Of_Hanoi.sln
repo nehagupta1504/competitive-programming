@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tower_Of_Hanoi", "Tower_Of_Hanoi.csproj", "{04F05E93-938E-416C-826B-180E4FEE6ACF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04F05E93-938E-416C-826B-180E4FEE6ACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04F05E93-938E-416C-826B-180E4FEE6ACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04F05E93-938E-416C-826B-180E4FEE6ACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04F05E93-938E-416C-826B-180E4FEE6ACF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EA20A799-0492-4204-B249-286491D8BC59}
+	EndGlobalSection
+EndGlobal

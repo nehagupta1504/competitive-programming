@@ -1,0 +1,81 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int priority(char c){
+    if(c == '^'){
+        return 3;
+    }
+    else if(c=='/' || c == '*'){
+        return 2;
+    }else if( c == '+' || c == '-'){
+        return 1;
+    }else {
+        return -1;
+    }
+}
+
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        //cout<<"m inside\n";
+        int n;
+        cin>>n;
+        //cout<<"t="<<t<<" n="<<n;
+        string s;
+        cin>>s; 
+        //cout<<s;
+        stack<char> st;
+        for(int i = 0; i < s.length(); i++){
+            //cout<<"s[i]="<<(int)s[i]<<"\n ";
+            if((int)s[i] >= 65 && (int)s[i]<=90){
+                
+               cout<<s[i];
+             }
+            else if(s[i] == ')'){
+               while(!st.empty() && st.top()!= '('){
+                  cout<<st.top();
+                  st.pop();
+               }
+            //cout<<s[i];
+               st.pop();
+            }
+            else{
+                 if( st.empty() || s[i] == '('|| priority(st.top())< priority(s[i]) || st.top() == '('){
+                    st.push(s[i]);
+                    //cout<<" Stack top="<< st.top()<<" ";
+                }else{
+                    //cout<<"inside else priority="<<priority(st.top())<<" & priority s[i]="<<priority(s[i])<<"\n";
+                    while(!st.empty() && priority(st.top()) >= priority(s[i])  ){
+                       // cout<<" inside else Stack top="<< st.top()<<" s[i]="<<s[i]<<"\n";
+                        cout<< st.top();
+                        st.pop();
+                    }
+                    st.push(s[i]);
+                }
+             }
+        }
+        while(!st.empty()){
+            if(st.top() != '('){
+                cout<<st.top();
+            }
+            st.pop();
+        }
+        cout<<"\n";
+    }
+}
+
+//--------------------------I/p Format------------------------------------
+/*
+		Input
+The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+The first line of each test case contains a single integer N denoting the length of S.
+The second line contains a string S, the infix expression.
+Output
+For each test case print a single line containing the postfix equivalent for the given infix expression.
+
+Constraints
+1≤T≤10
+1≤N≤102
+S contains only uppercase English letters (A...Z), and these characters - (,),+,−,∗,/,^. S is a valid infix expression.
+*/

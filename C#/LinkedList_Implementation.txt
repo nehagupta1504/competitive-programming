@@ -1,0 +1,51 @@
+using System.IO;
+using System;
+
+class node{
+    
+    public int value;
+    public node next;
+    
+    public node(int value){
+        this.value = value;
+        this.next = null;
+    }
+}
+
+class linkedList{
+    node head ;
+    public void insert(int value){
+        if(head == null){
+            head = new node(value);
+            Console.WriteLine("If working");
+            Console.WriteLine(head.value +"--");
+        }else {
+            node newNode = new node(value);
+            newNode.next = head;
+            head = newNode;
+        }
+    }
+    public void print(){
+        node temp = head;
+        while(temp.next != null){
+            Console.WriteLine(temp.value);
+            temp = temp.next;
+        }
+        Console.WriteLine(temp.value);
+    }
+}
+
+class Program
+{
+    
+    static void Main()
+    {
+       linkedList ll = new linkedList();
+       ll.insert(1);
+       ll.insert(2);
+       ll.insert(3);
+       ll.insert(4);
+       ll.print();
+    }
+    
+}

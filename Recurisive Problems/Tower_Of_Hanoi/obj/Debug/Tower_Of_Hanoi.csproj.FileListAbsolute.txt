@@ -1,0 +1,7 @@
+D:\cp\Recurisive Problems\Tower_Of_Hanoi\bin\Debug\Tower_Of_Hanoi.exe.config
+D:\cp\Recurisive Problems\Tower_Of_Hanoi\bin\Debug\Tower_Of_Hanoi.exe
+D:\cp\Recurisive Problems\Tower_Of_Hanoi\bin\Debug\Tower_Of_Hanoi.pdb
+D:\cp\Recurisive Problems\Tower_Of_Hanoi\obj\Debug\Tower_Of_Hanoi.csprojAssemblyReference.cache
+D:\cp\Recurisive Problems\Tower_Of_Hanoi\obj\Debug\Tower_Of_Hanoi.csproj.CoreCompileInputs.cache
+D:\cp\Recurisive Problems\Tower_Of_Hanoi\obj\Debug\Tower_Of_Hanoi.exe
+D:\cp\Recurisive Problems\Tower_Of_Hanoi\obj\Debug\Tower_Of_Hanoi.pdb

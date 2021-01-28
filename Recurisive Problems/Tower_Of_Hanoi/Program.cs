@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Tower_Of_Hanoi
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            int n;
+            n = Convert.ToInt32(Console.ReadLine());
+            TowerOfHanoi(n, "intial", "final", "mid");
+        }
+
+        public static void TowerOfHanoi(int n, string start , string end, string aux)
+        {
+            if (n == 1)
+            {
+                Console.WriteLine("Move  disk 1 from " + start + " to " + end);
+                return;
+            }else if(n == 0)
+            {
+                return;
+            }
+            TowerOfHanoi(n - 1, start, aux, end);
+            Console.WriteLine("Move disk " + n + " from " + start + " to " + end);
+            TowerOfHanoi(n - 1, aux, end, start);
+        }
+    }
+}
