@@ -1,0 +1,79 @@
+import java.util.*;
+public class Main
+{
+    class Node{
+        int data;
+        Node next;
+        public Node(int val){
+            this.data = val;
+            this.next = null;
+        }
+    }
+    Node head = null;
+    public void insert(int data){
+        Node newNode = new Node(data);
+        if(head == null){
+            head = newNode;
+            // System.out.println(head.data);
+        }else{
+            Node pointer = head;
+            while(pointer.next != null){
+                pointer = pointer.next;
+            }
+            pointer.next = newNode;
+            //  System.out.println(pointer.data);
+        }
+        Node pointer = head;
+       
+    }
+    public Node middleNode(Node first, Node last){
+        if(first == null)
+            return null;
+        Node slow = first;
+        Node fast = first.next;
+        while(fast != last){
+            fast = fast.next;
+            if(fast != last){
+                slow = slow.next;
+                fast = fast.next;
+            }
+        }
+        return slow;
+    }
+    public String binarySearch(int key){
+        if(head == null){
+            return "Not found";
+        }
+        Node first = head;
+        Node last = null;
+        do{
+           Node mid = middleNode(first, last);
+           if(mid == null){
+               return "Not Found";
+           }
+           
+           if(mid.data == key){
+               return "Found";
+           }else if(mid.data> key){
+               last = mid;
+           }else{
+               first = mid.next;
+           }
+            
+        }while(last == null || last != first);
+         return "Not Found";   
+    }
+	public static void main(String[] args) {
+	    Main obj = new Main();
+		obj.insert(1);
+		obj.insert(200);
+		obj.insert(480);
+		obj.insert(1000);
+		obj.insert(2000);
+// 		Node pointer = obj.head;
+        int key = 0;
+        String ans = obj.binarySearch(key);
+        System.out.println(ans);
+		
+	}
+}
