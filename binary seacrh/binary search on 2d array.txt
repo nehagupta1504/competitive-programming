@@ -1,0 +1,44 @@
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+class Main {
+	
+
+public static String bsOn2DArray(int[][] arr , int value){
+	
+	int ROW = arr.length;
+	int COL = arr[0].length;
+	int start = 0, end = ( ROW * COL )-1;
+	while(start <= end){
+	    int mid = start + (end-start)/2;
+	    int row = mid/COL;
+	    int col = mid % COL;
+	    if(arr[row][col] == value){
+	        return "Yes";
+	    }else if(arr[row][col] < value){
+	        start = mid +1;
+	    }else{
+	        end = mid-1;
+	    }
+	}
+	return "No";
+}
+	public static void main (String[] args) {
+                      // Your code here
+					  Scanner sc = new Scanner(System.in);
+					  int n = sc.nextInt();
+					  int m = sc.nextInt();
+					  int q = sc.nextInt();
+					int[][] arr = new int[n][m];
+					for(int i = 0 ; i < n ; i++){
+						for(int j = 0 ; j < m ; j++){
+							arr[i][j] = sc.nextInt();
+						}
+					}
+					for(int i = 0 ; i < q ; i++){
+						int k = sc.nextInt();
+						System.out.println(bsOn2DArray(arr,k));
+					}
+	}
+	
+}
