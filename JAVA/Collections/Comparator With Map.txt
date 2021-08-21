@@ -1,0 +1,80 @@
+/*
+Q). Sort Map by its Values
+Solution-  Made a sort by values function which makes a list of map 
+2). Sort that list
+3). Put back the map values & return it
+*/
+
+///---------------------------------------------------------------------- CODE-----------------------------------------------
+
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+	public static HashMap<Integer, Integer> sortByValue(HashMap<Integer, Integer> map){
+		//Create a list from elements of HashMap
+		List<Map.Entry<Integer, Integer>> list = new LinkedList<Map.Entry<Integer, Integer>>(map.entrySet());
+		//sort the list
+		Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>(){
+			public int compare(Map.Entry<Integer, Integer> m1, Map.Entry<Integer, Integer> m2){
+				return (m2.getValue()).compareTo(m1.getValue());
+			}
+		});
+		//Putting value back to hashmap
+		HashMap<Integer, Integer> temp = new LinkedHashMap<Integer, Integer>();
+		for(Map.Entry<Integer, Integer> el: list){
+			temp.put(el.getKey(), el.getValue());
+		}
+		return temp;
+	}
+
+	public static void main (String[] args) {
+                      // Your code here
+					 int[] arr = new int[]{7, 2,-1, 8,99, 8, 7, 2, 8};
+					 HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+					 for(int i = 0 ; i < arr.length; i++){
+						 if(map.containsKey(arr[i])){
+							 map.put(arr[i], map.get(arr[i])+1);
+						 }else{
+							 map.put(arr[i], 1);
+						 }
+						//  System.out.println(arr[i]+" "+map.get(arr[i]));
+					 }
+				HashMap<Integer, Integer> map2 = sortByValue(map);
+				 System.out.println("Before Sorting");
+
+				for(Map.Entry el: map.entrySet()){
+					 System.out.println(el.getKey()+" "+el.getValue());
+				 }
+				 System.out.println("After Sorting");
+				 for(Map.Entry el: map2.entrySet()){
+					 System.out.println(el.getKey()+" "+el.getValue());
+				 }
+
+	}
+}
+
+
+///---------------------------------------------------------------------- CODE OVER-----------------------------------------------
+
+
+//  -------------------------------------   op-------------------------------
+/*
+Before Sorting
+-1 1
+2 2
+99 1
+7 2
+8 3
+After Sorting
+8 3
+2 2
+7 2
+-1 1
+99 1
+
+
+
+*/
